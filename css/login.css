@@ -83,6 +83,65 @@
     box-shadow: 0 0 0 3px rgba(44, 110, 126, 0.2);
 }
 
+/* ===== CONTENEDOR DE CONTRASEÑA CON BOTÓN MOSTRAR/OCULTAR ===== */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    padding-right: 48px;
+    /* Espacio para el botón */
+    border: 2px solid #dce4e8;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: #f8fafc;
+    box-sizing: border-box;
+}
+
+.password-container input:focus {
+    outline: none;
+    border-color: #2c6e7e;
+    box-shadow: 0 0 0 3px rgba(44, 110, 126, 0.2);
+}
+
+/* Botón de mostrar/ocultar contraseña */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    color: #7a9aa8;
+    transition: color 0.3s, transform 0.2s;
+    z-index: 1;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password:hover {
+    color: #2c6e7e;
+    transform: scale(1.1);
+}
+
+.toggle-password:focus {
+    outline: none;
+    color: #1a3a4a;
+}
+
+.toggle-password:active {
+    transform: scale(0.9);
+}
+
+/* ===== BOTÓN DE LOGIN ===== */
 .btn-login {
     width: 100%;
     padding: 0.9rem;
@@ -219,4 +278,35 @@
         padding: 0.5rem 1.2rem;
         font-size: 0.85rem;
     }
+
+    /* Ajustes para el botón de contraseña en móvil */
+    .password-container input {
+        padding-right: 44px;
+        font-size: 0.95rem;
+    }
+
+    .toggle-password {
+        font-size: 1.1rem;
+        right: 10px;
+        padding: 4px;
+    }
+}
+
+/* ===== ANIMACIÓN OPCIONAL PARA EL BOTÓN ===== */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.toggle-password:active {
+    animation: pulse 0.3s ease;
 }

@@ -1,6 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('loginForm');
     const errorDiv = document.getElementById('loginError');
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+
+    // ===== FUNCIONALIDAD MOSTRAR/OCULTAR CONTRASEÑA =====
+    if (togglePassword && passwordInput) {
+        togglePassword.addEventListener('click', function () {
+            // Cambiar el tipo de input entre 'password' y 'text'
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            // Cambiar el icono según el estado
+            if (type === 'password') {
+                this.textContent = '👁️';
+                this.setAttribute('aria-label', 'Mostrar contraseña');
+            } else {
+                this.textContent = '👁️‍🗨️';
+                this.setAttribute('aria-label', 'Ocultar contraseña');
+            }
+        });
+
+        // Opcional: Permitir ocultar/mostrar con la tecla Enter en el botón
+        togglePassword.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    }
 
     // ===== USUARIOS AUTORIZADOS =====
     const usuariosAutorizados = [
