@@ -1,138 +1,258 @@
-/* ===== USUARIOS API ===== */
+/* =============================================
+   ESTILOS COMPACTOS PARA USUARIOS API
+   ============================================= */
+
+/* 📌 Sección principal */
 .usuarios-api {
-    background: white;
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem 0;
 }
 
 .usuarios-api h2 {
-    font-size: 2.2rem;
-    color: #1a3a4a;
-    text-align: center;
-    margin-bottom: 0.3rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #1a3c5e;
 }
 
-.usuarios-api>p {
+.usuarios-api p {
     text-align: center;
-    color: #5d7a8a;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* 📌 Grid de tarjetas - 4 columnas en pantallas grandes */
+.usuarios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
-.loading {
-    text-align: center;
-    padding: 3rem;
-    color: #5d7a8a;
-    font-size: 1.2rem;
-}
-
-.usuarios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
+/* 📌 Tarjeta individual - Tamaño compacto */
 .usuario-card {
-    background: #f8fafc;
-    border-radius: 16px;
-    padding: 1.5rem;
-    display: flex;
-    gap: 1.2rem;
-    align-items: flex-start;
-    border: 1px solid #e8edf0;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: white;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #2d6a9f;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
 }
 
 .usuario-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
 }
 
+/* 📌 Avatar más pequeño */
 .usuario-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #2c6e7e;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    font-weight: 700;
-    flex-shrink: 0;
-}
-
-.usuario-info {
-    flex: 1;
-}
-
-.usuario-info h3 {
-    color: #1a3a4a;
-    font-size: 1.1rem;
+    text-align: center;
     margin-bottom: 0.3rem;
 }
 
+.avatar-icon {
+    font-size: 1.8rem;
+    display: inline-block;
+    background: #f0f2f5;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50%;
+}
+
+/* 📌 Título del usuario */
+.usuario-card h3 {
+    color: #1a3c5e;
+    margin: 0.3rem 0 0.5rem 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 📌 Información del usuario - Compacta */
 .usuario-info p {
-    color: #3d5a6d;
-    font-size: 0.9rem;
     margin: 0.2rem 0;
+    color: #555;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.usuario-info .label {
+    font-weight: 600;
+    color: #333;
+    min-width: 55px;
+    font-size: 0.75rem;
+}
+
+/* 📌 ID del usuario (esquina) */
+.usuario-card .usuario-id {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.5rem;
+    background: #f0f2f5;
+    padding: 0.1rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.6rem;
+    color: #999;
+}
+
+/* 📌 Enlaces en la tarjeta */
+.usuario-info a {
+    color: #2d6a9f;
+    text-decoration: none;
+    font-size: 0.75rem;
     word-break: break-all;
 }
 
-.usuario-info p a {
-    color: #2c6e7e;
+.usuario-info a:hover {
     text-decoration: underline;
 }
 
-.usuario-info p a:hover {
-    color: #1a4a5a;
-}
+/* =============================================
+   📌 BOTÓN VOLVER AL INICIO (Estilo Reservas)
+   ============================================= */
 
-.error-api {
+.btn-volver-container {
     text-align: center;
-    padding: 2rem;
+    margin-top: 2rem;
+    padding: 1rem 0;
 }
 
-.error-api p {
-    color: #e74c3c;
+/* ✅ ESTILO CORREGIDO - Sin doble flecha */
+.btn-volver {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    padding: 0.7rem 2rem !important;
+    background: #2c6e7e !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    transition: background 0.3s, transform 0.2s !important;
+    box-shadow: 0 2px 8px rgba(44, 110, 126, 0.25) !important;
+}
+
+.btn-volver:hover {
+    background: #1a4a5a !important;
+    transform: translateY(-2px) !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.btn-volver:active {
+    transform: scale(0.97) !important;
+}
+
+/* ✅ FLECHA ÚNICA - Solo desde CSS */
+.btn-volver::before {
+    content: "←" !important;
+    font-size: 1.1rem !important;
+    line-height: 1 !important;
+    transition: transform 0.2s ease !important;
+}
+
+.btn-volver:hover::before {
+    transform: translateX(-3px) !important;
+}
+
+/* =============================================
+   📌 MENSAJES DE CARGA Y ERROR
+   ============================================= */
+
+.loading {
+    text-align: center;
     font-size: 1.1rem;
+    color: #666;
+    padding: 1.5rem;
 }
 
-.btn-reintentar {
-    margin-top: 1rem;
-    padding: 0.6rem 1.8rem;
-    background: #2c6e7e;
-    color: white;
-    border: none;
-    border-radius: 8px;
+.error {
+    text-align: center;
+    padding: 1rem;
     font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s;
+    background: #f8d7da;
+    border-radius: 8px;
+    color: #dc3545;
 }
 
-.btn-reintentar:hover {
-    background: #1a4a5a;
-}
+/* =============================================
+   📱 RESPONSIVE
+   ============================================= */
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
-    .usuarios-api {
-        padding: 1rem;
-    }
-
+/* 🔹 Pantallas grandes (4 columnas) */
+@media (min-width: 1200px) {
     .usuarios-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 🔹 Pantallas medianas (3 columnas) */
+@media (max-width: 1199px) and (min-width: 769px) {
+    .usuarios-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 🔹 Tablets (2 columnas) */
+@media (max-width: 768px) {
+    .usuarios-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
     }
 
     .usuario-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        padding: 0.8rem 1rem;
     }
 
-    .usuario-avatar {
-        width: 50px;
-        height: 50px;
+    .usuario-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .usuario-info p {
+        font-size: 0.75rem;
+    }
+
+    .usuario-info .label {
+        font-size: 0.7rem;
+        min-width: 45px;
+    }
+
+    .avatar-icon {
+        font-size: 1.5rem;
+    }
+}
+
+/* 🔹 Móviles (1 columna) */
+@media (max-width: 480px) {
+    .usuarios-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .usuario-card {
+        padding: 0.8rem 1rem;
+        max-width: 100%;
+    }
+
+    .usuario-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .usuarios-api h2 {
         font-size: 1.4rem;
+    }
+
+    .btn-volver {
+        padding: 0.6rem 1.5rem !important;
+        font-size: 0.9rem !important;
+        width: 100% !important;
+        justify-content: center !important;
     }
 }
