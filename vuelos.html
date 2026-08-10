@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turismo Aventura - Vuelos</title>
+    <link rel="stylesheet" href="vuelo.css" />
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+                <li><a href="clima.html">Clima</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal: Vuelos -->
+    <main>
+        <section class="vuelos-section">
+            <h1>✈️ Vuelos para tu Aventura</h1>
+            <p>Encuentra los mejores vuelos hacia tus destinos favoritos.</p>
+
+            <!-- Formulario de búsqueda -->
+            <div class="busqueda">
+                <input type="text" id="origen" placeholder="Ciudad de origen" />
+                <input type="text" id="destino" placeholder="Ciudad de destino" />
+                <input type="date" id="fecha" />
+                <button id="buscarVuelos">Buscar vuelos</button>
+            </div>
+
+            <!-- Resultados -->
+            <div id="resultados" class="resultados"></div>
+        </section>
+    </main>
+
+    <script src="vuelo.js"></script>
+</body>
+</html>
